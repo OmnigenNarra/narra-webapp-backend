@@ -1,0 +1,559 @@
+{
+  "Global": [],
+  "Links": [
+    {
+      "InNode": "NStoryBlock_Action_2",
+      "InPin": 0,
+      "Messages": [
+        "Link is coexecuted with a link to End",
+        "Link is coexecuted with a link to End"
+      ],
+      "OutNode": "NStoryBlock_Option_0",
+      "OutPin": 0,
+      "Verdict": 2
+    },
+    {
+      "InNode": "NStoryBlock_Fact_0",
+      "InPin": 1,
+      "Messages": [
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!",
+        "Link creates an infinite loop!"
+      ],
+      "OutNode": "NStoryBlock_Option_1",
+      "OutPin": 0,
+      "Verdict": 2
+    },
+    {
+      "InNode": "NStoryBlock_Event_0",
+      "InPin": 0,
+      "Messages": [
+        "Link is coexecuted with a link to End"
+      ],
+      "OutNode": "NStoryBlock_Condition_0",
+      "OutPin": 1,
+      "Verdict": 2
+    }
+  ],
+  "Nodes": [
+    {
+      "Fields": [
+        0,
+        0
+      ],
+      "Id": "NStoryBlock_Action_3",
+      "Messages": [],
+      "Verdict": 0
+    },
+    {
+      "Fields": [
+        0
+      ],
+      "Id": "NStoryBlock_End_0",
+      "Messages": [],
+      "Verdict": 0
+    },
+    {
+      "Fields": [],
+      "Id": "NStoryBlock_Condition_3",
+      "Messages": [
+        "Node unreachable"
+      ],
+      "Verdict": 1
+    },
+    {
+      "Fields": [
+        0
+      ],
+      "Id": "NStoryBlock_End_2",
+      "Messages": [],
+      "Verdict": 0
+    },
+    {
+      "Fields": [],
+      "Id": "NCustomStoryBlock_Test_0",
+      "Messages": [],
+      "Verdict": 0
+    },
+    {
+      "Fields": [],
+      "Id": "NStoryBlock_Condition_2",
+      "Messages": [
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n"
+      ],
+      "Verdict": 1
+    },
+    {
+      "Fields": [
+        0
+      ],
+      "Id": "NStoryBlock_Objective_1",
+      "Messages": [],
+      "Verdict": 0
+    },
+    {
+      "Fields": [],
+      "Id": "NStoryBlock_Pause_0",
+      "Messages": [],
+      "Verdict": 0
+    },
+    {
+      "Fields": [
+        0,
+        0,
+        0
+      ],
+      "Id": "NStoryBlock_Sound_0",
+      "Messages": [],
+      "Verdict": 0
+    },
+    {
+      "Fields": [],
+      "Id": "NStoryBlock_Start_0",
+      "Messages": [
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n"
+      ],
+      "Verdict": 1
+    },
+    {
+      "Fields": [],
+      "Id": "NStoryBlock_Action_0",
+      "Messages": [
+        "Node unreachable"
+      ],
+      "Verdict": 1
+    },
+    {
+      "Fields": [
+        0,
+        2,
+        1
+      ],
+      "Id": "NStoryBlock_Option_0",
+      "Messages": [
+        "Missing label",
+        "Missing Character"
+      ],
+      "Verdict": 2
+    },
+    {
+      "Fields": [
+        0
+      ],
+      "Id": "NStoryBlock_Condition_0",
+      "Messages": [
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n"
+      ],
+      "Verdict": 1
+    },
+    {
+      "Fields": [],
+      "Id": "NStoryBlock_Condition_1",
+      "Messages": [
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 0\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 0\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 1\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 0\nNStoryBlock_Start_0: 1\n",
+        "End unreachable in the following variant:\nNStoryBlock_Condition_0: 1\nNStoryBlock_Condition_1: 2\nNStoryBlock_Condition_2: 1\nNStoryBlock_Start_0: 1\n"
+      ],
+      "Verdict": 1
+    },
+    {
+      "Fields": [
+        0,
+        2,
+        1
+      ],
+      "Id": "NStoryBlock_Option_1",
+      "Messages": [
+        "Missing label",
+        "Missing Character"
+      ],
+      "Verdict": 2
+    },
+    {
+      "Fields": [
+        0,
+        0,
+        0
+      ],
+      "Id": "NStoryBlock_Condition_4",
+      "Messages": [],
+      "Verdict": 0
+    },
+    {
+      "Fields": [
+        0,
+        0,
+        0
+      ],
+      "Id": "NStoryBlock_Fact_0",
+      "Messages": [],
+      "Verdict": 0
+    },
+    {
+      "Fields": [],
+      "Id": "NStoryBlock_Action_2",
+      "Messages": [],
+      "Verdict": 0
+    },
+    {
+      "Fields": [
+        0,
+        0,
+        0
+      ],
+      "Id": "NStoryBlock_DialogueLine_0",
+      "Messages": [],
+      "Verdict": 0
+    },
+    {
+      "Fields": [
+        0
+      ],
+      "Id": "NStoryBlock_Event_0",
+      "Messages": [],
+      "Verdict": 0
+    },
+    {
+      "Fields": [
+        0
+      ],
+      "Id": "NStoryBlock_Story_0",
+      "Messages": [],
+      "Verdict": 0
+    },
+    {
+      "Fields": [
+        0
+      ],
+      "Id": "NStoryBlock_TimeoutOption_0",
+      "Messages": [
+        "Node unreachable"
+      ],
+      "Verdict": 1
+    },
+    {
+      "Fields": [
+        0,
+        0,
+        0
+      ],
+      "Id": "NStoryBlock_Trigger_0",
+      "Messages": [],
+      "Verdict": 0
+    },
+    {
+      "Fields": [
+        0
+      ],
+      "Id": "NStoryBlock_End_1",
+      "Messages": [],
+      "Verdict": 0
+    }
+  ],
+  "Variants": [
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_DialogueLine_0",
+      "NStoryBlock_Option_0",
+      "NStoryBlock_Option_1",
+      "NStoryBlock_Fact_0",
+      "NStoryBlock_Action_2",
+      "NStoryBlock_Action_3",
+      "NStoryBlock_End_0",
+      "NStoryBlock_Condition_0",
+      "NStoryBlock_Event_0",
+      "NStoryBlock_Story_0",
+      "NStoryBlock_Objective_1",
+      "NStoryBlock_Sound_0",
+      "NStoryBlock_Condition_2",
+      "NStoryBlock_End_1"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_DialogueLine_0",
+      "NStoryBlock_Option_0",
+      "NStoryBlock_Option_1",
+      "NStoryBlock_Fact_0",
+      "NStoryBlock_Action_2",
+      "NStoryBlock_Action_3",
+      "NStoryBlock_End_0",
+      "NStoryBlock_Condition_0",
+      "NStoryBlock_Story_0",
+      "NStoryBlock_Objective_1",
+      "NStoryBlock_Sound_0",
+      "NStoryBlock_Condition_2",
+      "NStoryBlock_Trigger_0",
+      "NStoryBlock_End_1"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_DialogueLine_0",
+      "NStoryBlock_Option_0",
+      "NStoryBlock_Option_1",
+      "NStoryBlock_Fact_0",
+      "NStoryBlock_Action_2",
+      "NStoryBlock_Action_3",
+      "NStoryBlock_End_0",
+      "NStoryBlock_Condition_0",
+      "NStoryBlock_Event_0",
+      "NStoryBlock_Story_0",
+      "NStoryBlock_Objective_1",
+      "NStoryBlock_Sound_0",
+      "NStoryBlock_Condition_2",
+      "NStoryBlock_End_1"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_DialogueLine_0",
+      "NStoryBlock_Option_0",
+      "NStoryBlock_Option_1",
+      "NStoryBlock_Fact_0",
+      "NStoryBlock_Action_2",
+      "NStoryBlock_Action_3",
+      "NStoryBlock_End_0",
+      "NStoryBlock_Condition_0",
+      "NStoryBlock_Story_0",
+      "NStoryBlock_Objective_1",
+      "NStoryBlock_Sound_0",
+      "NStoryBlock_Condition_2",
+      "NStoryBlock_Trigger_0",
+      "NStoryBlock_End_1"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_DialogueLine_0",
+      "NStoryBlock_Option_0",
+      "NStoryBlock_Option_1",
+      "NStoryBlock_Fact_0",
+      "NStoryBlock_Action_2",
+      "NStoryBlock_Action_3",
+      "NStoryBlock_End_0",
+      "NStoryBlock_Condition_0",
+      "NStoryBlock_Event_0",
+      "NStoryBlock_Story_0",
+      "NStoryBlock_Objective_1",
+      "NStoryBlock_Sound_0",
+      "NStoryBlock_Condition_2",
+      "NStoryBlock_End_1"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_DialogueLine_0",
+      "NStoryBlock_Option_0",
+      "NStoryBlock_Option_1",
+      "NStoryBlock_Fact_0",
+      "NStoryBlock_Action_2",
+      "NStoryBlock_Action_3",
+      "NStoryBlock_End_0",
+      "NStoryBlock_Condition_0",
+      "NStoryBlock_Story_0",
+      "NStoryBlock_Objective_1",
+      "NStoryBlock_Sound_0",
+      "NStoryBlock_Condition_2",
+      "NStoryBlock_Trigger_0",
+      "NStoryBlock_End_1"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_DialogueLine_0",
+      "NStoryBlock_Option_0",
+      "NStoryBlock_Option_1",
+      "NStoryBlock_Fact_0",
+      "NStoryBlock_Action_2",
+      "NStoryBlock_Action_3",
+      "NStoryBlock_End_0",
+      "NStoryBlock_Condition_0",
+      "NStoryBlock_Event_0",
+      "NStoryBlock_Condition_1",
+      "NStoryBlock_Pause_0",
+      "NStoryBlock_Sound_0",
+      "NStoryBlock_Condition_2",
+      "NStoryBlock_End_1"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_DialogueLine_0",
+      "NStoryBlock_Option_0",
+      "NStoryBlock_Option_1",
+      "NStoryBlock_Fact_0",
+      "NStoryBlock_Action_2",
+      "NStoryBlock_Action_3",
+      "NStoryBlock_End_0",
+      "NStoryBlock_Condition_0",
+      "NStoryBlock_Event_0",
+      "NStoryBlock_Condition_1",
+      "NStoryBlock_Pause_0",
+      "NStoryBlock_Sound_0",
+      "NStoryBlock_Condition_2",
+      "NStoryBlock_Trigger_0",
+      "NStoryBlock_End_1"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_DialogueLine_0",
+      "NStoryBlock_Option_0",
+      "NStoryBlock_Option_1",
+      "NStoryBlock_Fact_0",
+      "NStoryBlock_Action_2",
+      "NStoryBlock_Action_3",
+      "NStoryBlock_End_0",
+      "NStoryBlock_Condition_0",
+      "NStoryBlock_Event_0",
+      "NStoryBlock_Condition_1",
+      "NStoryBlock_Condition_2",
+      "NStoryBlock_End_2"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_DialogueLine_0",
+      "NStoryBlock_Option_0",
+      "NStoryBlock_Option_1",
+      "NStoryBlock_Fact_0",
+      "NStoryBlock_Action_2",
+      "NStoryBlock_Action_3",
+      "NStoryBlock_End_0",
+      "NStoryBlock_Condition_0",
+      "NStoryBlock_Event_0",
+      "NStoryBlock_Condition_1",
+      "NStoryBlock_Condition_2",
+      "NStoryBlock_Trigger_0",
+      "NStoryBlock_End_2"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_DialogueLine_0",
+      "NStoryBlock_Option_0",
+      "NStoryBlock_Option_1",
+      "NStoryBlock_Fact_0",
+      "NStoryBlock_Action_2",
+      "NStoryBlock_Action_3",
+      "NStoryBlock_End_0",
+      "NStoryBlock_Condition_0",
+      "NStoryBlock_Event_0",
+      "NStoryBlock_Condition_1",
+      "NStoryBlock_Condition_2",
+      "NCustomStoryBlock_Test_0"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_DialogueLine_0",
+      "NStoryBlock_Option_0",
+      "NStoryBlock_Option_1",
+      "NStoryBlock_Fact_0",
+      "NStoryBlock_Action_2",
+      "NStoryBlock_Action_3",
+      "NStoryBlock_End_0",
+      "NStoryBlock_Condition_0",
+      "NStoryBlock_Event_0",
+      "NStoryBlock_Condition_1",
+      "NStoryBlock_Condition_2",
+      "NStoryBlock_Trigger_0",
+      "NCustomStoryBlock_Test_0"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_Condition_4"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_Condition_4"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_Condition_4"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_Condition_4"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_Condition_4"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_Condition_4"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_Condition_4"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_Condition_4"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_Condition_4"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_Condition_4"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_Condition_4"
+    ],
+    [
+      "NStoryBlock_Start_0",
+      "NStoryBlock_Condition_4"
+    ]
+  ]
+}

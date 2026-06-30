@@ -1,0 +1,1615 @@
+{
+  "Actions": [
+    {
+      "Name": "Interact",
+      "Params": [
+        {
+          "AssetClass": "NEntity",
+          "EntityTypes": [
+            "NEntityTypeObject"
+          ],
+          "Label": "Object",
+          "Mandatory": true
+        }
+      ]
+    },
+    {
+      "Name": "Collect",
+      "Params": [
+        {
+          "AssetClass": "NEntity",
+          "EntityTypes": [
+            "NEntityTypeObject"
+          ],
+          "Label": "Object",
+          "Mandatory": true
+        }
+      ]
+    },
+    {
+      "Name": "Destroy",
+      "Params": [
+        {
+          "AssetClass": "NEntity",
+          "EntityTypes": [
+            "NEntityTypeObject"
+          ],
+          "Label": "Object",
+          "Mandatory": true
+        }
+      ]
+    },
+    {
+      "Name": "Open",
+      "Params": [
+        {
+          "AssetClass": "NEntity",
+          "EntityTypes": [
+            "NEntityTypeObject"
+          ],
+          "Label": "Object",
+          "Mandatory": true
+        }
+      ]
+    },
+    {
+      "Name": "Close",
+      "Params": [
+        {
+          "AssetClass": "NEntity",
+          "EntityTypes": [
+            "NEntityTypeObject"
+          ],
+          "Label": "Object",
+          "Mandatory": true
+        }
+      ]
+    },
+    {
+      "Name": "Experience",
+      "Params": [
+        {
+          "AssetClass": "NStory",
+          "EntityTypes": [],
+          "Label": "Story",
+          "Mandatory": true
+        }
+      ]
+    },
+    {
+      "Name": "Move",
+      "Params": [
+        {
+          "AssetClass": "NEntity",
+          "EntityTypes": [
+            "NEntityTypeObject",
+            "NEntityTypeCharacter"
+          ],
+          "Label": "Entity",
+          "Mandatory": true
+        },
+        {
+          "AssetClass": "NEntity",
+          "EntityTypes": [
+            "NEntityTypeLocation"
+          ],
+          "Label": "Destination",
+          "Mandatory": true
+        }
+      ]
+    },
+    {
+      "Name": "Approach",
+      "Params": [
+        {
+          "AssetClass": "NEntity",
+          "EntityTypes": [
+            "NEntityTypeObject",
+            "NEntityTypeCharacter"
+          ],
+          "Label": "Entity",
+          "Mandatory": true
+        }
+      ]
+    },
+    {
+      "Name": "Reach",
+      "Params": [
+        {
+          "AssetClass": "NEntity",
+          "EntityTypes": [
+            "NEntityTypeLocation"
+          ],
+          "Label": "Destination",
+          "Mandatory": true
+        }
+      ]
+    },
+    {
+      "Name": "Receive",
+      "Params": [
+        {
+          "AssetClass": "NEntity",
+          "EntityTypes": [
+            "NEntityTypeCharacter"
+          ],
+          "Label": "Giver",
+          "Mandatory": true
+        },
+        {
+          "AssetClass": "NEntity",
+          "EntityTypes": [
+            "NEntityTypeObject"
+          ],
+          "Label": "Object",
+          "Mandatory": true
+        }
+      ]
+    },
+    {
+      "Name": "Transform",
+      "Params": [
+        {
+          "AssetClass": "NEntity",
+          "EntityTypes": [
+            "NEntityTypeObject",
+            "NEntityTypeCharacter"
+          ],
+          "Label": "From",
+          "Mandatory": true
+        },
+        {
+          "AssetClass": "NEntity",
+          "EntityTypes": [
+            "NEntityTypeObject",
+            "NEntityTypeCharacter"
+          ],
+          "Label": "To",
+          "Mandatory": true
+        }
+      ]
+    },
+    {
+      "Name": "WaitTillNightfall",
+      "Params": []
+    }
+  ],
+  "Assets": [
+    {
+      "Class": "NFact",
+      "Meta": {},
+      "Uri": "/Game/Narra/NFact/ValidFact"
+    },
+    {
+      "Class": "NFact",
+      "Meta": {},
+      "Uri": "/Game/Narra/NFact/Testowanko"
+    },
+    {
+      "Class": "NFact",
+      "Meta": {},
+      "Uri": "/Game/Narra/NFact/brakhajsu"
+    },
+    {
+      "Class": "NObjective",
+      "Meta": {},
+      "Uri": "/Game/Narra/NObjective/TestObjective"
+    },
+    {
+      "Class": "NObjective",
+      "Meta": {},
+      "Uri": "/Game/Narra/NObjective/ValidObjective"
+    },
+    {
+      "Class": "NStory",
+      "Meta": {},
+      "Uri": "/Game/Narra/NStory/StoryDebuger"
+    },
+    {
+      "Class": "NStory",
+      "Meta": {},
+      "Uri": "/Game/Narra/NStory/StoryEntities"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/CompileStart_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/CompileSuccess_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/CompileFailed_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/CH3a_R_1_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/CH1_R_1_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/CH1_R_2_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/CH1_R_3_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/CH1_R_4_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/CH1_R_5_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/CH1_R_CONTAINER-1_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/CH1_R_CONTAINER-2a_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/CH1_R_CONTAINER-2b_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/CH3a_R_2_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/can-you-get-it_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/hello-3_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/hello-4_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/let-me-out-of-here-1_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/maybe-next-time-huh_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/open-the-door_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/open-the-goddamn-door_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/TestSound2_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/Test_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/yes-indeed_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/EjectFromPlayer_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/EndPlayInEditor_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/EndSimulate_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/PossessPlayer_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/StartPlayInEditor_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/StartSimulate_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_click1_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_click2_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_click3_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_close_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_confirm_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_grab_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_negative_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_objectRotateLoop_01_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_objectRotateLoop_02_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_object_grabbed_loop_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_open_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_shep_scale_down_01_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_shep_scale_down_02_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_shep_scale_down_03_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_shep_scale_down_04_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_shep_scale_up_01_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_shep_scale_up_02_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_shep_scale_up_03_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_shep_scale_up_04_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_teleport_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_ungrab_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_WorldMoveLoop_01_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/VR_WorldMoveLoop_02_Cue"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/Click_on_Button_Cue"
+    },
+    {
+      "Class": "NEntity",
+      "Meta": {
+        "IsEnabled": true,
+        "Types": []
+      },
+      "Uri": "/Game/Narra/NEntity/Object1"
+    },
+    {
+      "Class": "NEntity",
+      "Meta": {
+        "IsEnabled": true,
+        "Types": []
+      },
+      "Uri": "/Game/Narra/NEntity/ObjectPumpkin"
+    },
+    {
+      "Class": "NEntity",
+      "Meta": {
+        "IsEnabled": true,
+        "Types": []
+      },
+      "Uri": "/Game/Narra/NEntity/ObjectTallGrass"
+    },
+    {
+      "Class": "NEntity",
+      "Meta": {
+        "IsEnabled": true,
+        "Types": []
+      },
+      "Uri": "/Game/Narra/NEntity/ObjectWatermelon"
+    },
+    {
+      "Class": "NEntity",
+      "Meta": {
+        "IsEnabled": true,
+        "Types": []
+      },
+      "Uri": "/Game/Narra/NEntity/House"
+    },
+    {
+      "Class": "NEntity",
+      "Meta": {
+        "IsEnabled": true,
+        "Types": []
+      },
+      "Uri": "/Game/Narra/NEntity/Room"
+    },
+    {
+      "Class": "NEntity",
+      "Meta": {
+        "IsEnabled": true,
+        "Types": []
+      },
+      "Uri": "/Game/Narra/NEntity/World"
+    },
+    {
+      "Class": "NEntity",
+      "Meta": {
+        "IsEnabled": true,
+        "Types": []
+      },
+      "Uri": "/Game/Narra/NEntity/Jacek"
+    },
+    {
+      "Class": "NEntity",
+      "Meta": {
+        "IsEnabled": true,
+        "Types": []
+      },
+      "Uri": "/Game/Narra/NEntity/ValidCharacter"
+    }
+  ],
+  "EntityTypes": [
+    {
+      "Children": [],
+      "Name": "NEntityTypeCharacter"
+    },
+    {
+      "Children": [],
+      "Name": "NEntityTypeLocation"
+    },
+    {
+      "Children": [],
+      "Name": "NEntityTypeObject"
+    }
+  ],
+  "Helpers": [
+    {
+      "Id": "",
+      "Meta": {},
+      "Name": "Comment no 0",
+      "PosX": 100,
+      "PosY": 100,
+      "SizeX": 400,
+      "SizeY": 300,
+      "Type": "Comment"
+    },
+    {
+      "Id": "",
+      "Meta": {
+        "Color": "(R=0.05,G=0.01,B=0.3,A=0.002)",
+        "ContainedNodes": [
+          "NStoryBlock_Action_0",
+          "NStoryBlock_Event_0"
+        ]
+      },
+      "Name": "Union no 0",
+      "PosX": 0,
+      "PosY": 0,
+      "SizeX": 400,
+      "SizeY": 300,
+      "Type": "Union"
+    },
+    {
+      "Id": "",
+      "Meta": {
+        "Description": "Image desc",
+        "Uri": "img/da39a3ee5e6b4b0d3255bfef95601890afd80709/Obrazek_asdfgh.png"
+      },
+      "Name": "Obrazek asdfgh",
+      "PosX": 0,
+      "PosY": 0,
+      "SizeX": 400,
+      "SizeY": 300,
+      "Type": "Image"
+    },
+    {
+      "Id": "",
+      "Meta": {
+        "ContainedNodes": [
+          "NStoryBlock_Option_0",
+          "NStoryBlock_Option_1"
+        ],
+        "Sequence": "Some sequence"
+      },
+      "Name": "Sequence",
+      "PosX": 0,
+      "PosY": 0,
+      "SizeX": 400,
+      "SizeY": 300,
+      "Type": "Sequence"
+    },
+    {
+      "Id": "",
+      "Meta": {
+        "Text": "Some very important content.\r\nScroll down..."
+      },
+      "Name": "Sticky Note",
+      "PosX": -468,
+      "PosY": -158,
+      "SizeX": 400,
+      "SizeY": 300,
+      "Type": "StickyNote"
+    }
+  ],
+  "JSONVersion": "4.6.0",
+  "ModTime": "0",
+  "Nodes": [
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Start_0",
+      "InLinks": [],
+      "InPins": 1,
+      "Meta": {},
+      "Name": "Start",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_DialogueLine_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        },
+        {
+          "LinkedNodeId": "NStoryBlock_Condition_4",
+          "MyPinIndex": 1,
+          "OtherPinIndex": 0
+        }
+      ],
+      "OutPins": 2,
+      "PosX": -679,
+      "PosY": -28,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Start",
+      "Weight": 0
+    },
+    {
+      "Assets": [
+        {
+          "Class": "NEntity",
+          "Uris": [
+            "/Game/Narra/NEntity/Jacek"
+          ]
+        }
+      ],
+      "Components": [],
+      "Description": "Ważna rzecz",
+      "Id": "NStoryBlock_DialogueLine_0",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Start_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "Id": "",
+        "IdAuto": true,
+        "IsExpanded": false,
+        "Text": "Posadził dzad rzepkę.\r\nAle nie wiedział po co.",
+        "Time": 175.5
+      },
+      "Name": "Wypowiedź ąę",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Option_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        },
+        {
+          "LinkedNodeId": "NStoryBlock_Option_1",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "OutPins": 1,
+      "PosX": -468,
+      "PosY": -158,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "DialogueLine",
+      "Weight": 0
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Option_0",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_DialogueLine_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "Label": "",
+        "Order": 0
+      },
+      "Name": "Psy",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Fact_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        },
+        {
+          "LinkedNodeId": "NStoryBlock_Action_2",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "OutPins": 1,
+      "PosX": 256,
+      "PosY": -55,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Choice",
+      "Weight": 0
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Option_1",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_DialogueLine_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "Label": "",
+        "Order": 1
+      },
+      "Name": "Koty",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Fact_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 1
+        },
+        {
+          "LinkedNodeId": "NStoryBlock_Condition_2",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "OutPins": 1,
+      "PosX": 236,
+      "PosY": 316,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Choice",
+      "Weight": 0
+    },
+    {
+      "Assets": [
+        {
+          "Class": "NEntity",
+          "Uris": [
+            "/Game/Narra/NEntity/Room"
+          ]
+        }
+      ],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Action_0",
+      "InLinks": [],
+      "InPins": 1,
+      "Meta": {
+        "Type": "Travel"
+      },
+      "Name": "Action",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 1110,
+      "PosY": -780,
+      "Tags": [],
+      "TriggerTags": [
+        "KurkaRurka"
+      ],
+      "Type": "Action",
+      "Weight": 0
+    },
+    {
+      "Assets": [
+        {
+          "Class": "NFact",
+          "Uris": [
+            "/Game/Narra/NFact/ValidFact"
+          ]
+        }
+      ],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Fact_0",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Option_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        },
+        {
+          "LinkedNodeId": "NStoryBlock_Option_1",
+          "MyPinIndex": 1,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "Mode": "AddElement",
+        "Value": "Rybka"
+      },
+      "Name": "Miał, to fakt",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Condition_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "OutPins": 1,
+      "PosX": 609,
+      "PosY": 143,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Fact",
+      "Weight": 0
+    },
+    {
+      "Assets": [
+        {
+          "Class": "NStory",
+          "Uris": [
+            "/Game/Narra/NStory/StoryEntities"
+          ]
+        }
+      ],
+      "Components": [
+        {
+          "Assets": [
+            {
+              "Class": "NEntity",
+              "Uris": [
+                "/Game/Narra/NEntity/ObjectPumpkin"
+              ]
+            }
+          ],
+          "Components": [],
+          "Description": "",
+          "Id": "NStoryBlock_Action_1",
+          "InLinks": [],
+          "InPins": 1,
+          "Meta": {
+            "Type": "Take"
+          },
+          "Name": "Akcja z Dynią",
+          "OutLinks": [],
+          "OutPins": 1,
+          "PosX": 1550,
+          "PosY": 44,
+          "Tags": [],
+          "TriggerTags": [],
+          "Type": "Action",
+          "Weight": 0
+        },
+        {
+          "Assets": [
+            {
+              "Class": "NObjective",
+              "Uris": [
+                "/Game/Narra/NObjective/TestObjective"
+              ]
+            }
+          ],
+          "Components": [],
+          "Description": "",
+          "Id": "NStoryBlock_Objective_0",
+          "InLinks": [],
+          "InPins": 1,
+          "Meta": {
+            "State": "Active"
+          },
+          "Name": "Wez melona",
+          "OutLinks": [],
+          "OutPins": 1,
+          "PosX": 1825,
+          "PosY": -206,
+          "Tags": [],
+          "TriggerTags": [],
+          "Type": "Objective",
+          "Weight": 0
+        }
+      ],
+      "Description": "",
+      "Id": "NStoryBlock_Action_2",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Option_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "Type": "Talk"
+      },
+      "Name": "Action",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Action_3",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "OutPins": 1,
+      "PosX": 1103,
+      "PosY": -319,
+      "Tags": [
+        "KurkaRurka"
+      ],
+      "TriggerTags": [],
+      "Type": "Action",
+      "Weight": 0
+    },
+    {
+      "Assets": [
+        {
+          "Class": "NEntity",
+          "Uris": [
+            "/Game/Narra/NEntity/Jacek",
+            "/Game/Narra/NEntity/ObjectWatermelon"
+          ]
+        }
+      ],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Action_3",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Action_2",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "Type": "Receive"
+      },
+      "Name": "Action",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_End_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "OutPins": 1,
+      "PosX": 2124,
+      "PosY": -258,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Action",
+      "Weight": 0
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_End_0",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Action_3",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {},
+      "Name": "KupaEnding",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 3034,
+      "PosY": -66,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "End",
+      "Weight": 0
+    },
+    {
+      "Assets": [
+        {
+          "Class": "NFact",
+          "Uris": [
+            "/Game/Narra/NFact/Testowanko"
+          ]
+        }
+      ],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Condition_0",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Fact_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "Cases": [
+          {
+            "Name": "Case #1",
+            "Value": "haha"
+          }
+        ],
+        "Mode": "Switch"
+      },
+      "Name": "Condition",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Story_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        },
+        {
+          "LinkedNodeId": "NStoryBlock_Event_0",
+          "MyPinIndex": 1,
+          "OtherPinIndex": 0
+        },
+        {
+          "LinkedNodeId": "NStoryBlock_Condition_1",
+          "MyPinIndex": 1,
+          "OtherPinIndex": 0
+        }
+      ],
+      "OutPins": 2,
+      "PosX": 1172,
+      "PosY": 205,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Condition",
+      "Weight": 0
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Event_0",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Condition_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 1
+        },
+        {
+          "LinkedNodeId": "NStoryBlock_Condition_2",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "Id": "WydarzenieEkstra"
+      },
+      "Name": "Nowy Event",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 1816,
+      "PosY": 489,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Event",
+      "Weight": 0
+    },
+    {
+      "Assets": [
+        {
+          "Class": "NStory",
+          "Uris": [
+            "/Game/Narra/NStory/StoryDebuger"
+          ]
+        }
+      ],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Story_0",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Condition_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {},
+      "Name": "Debug Story",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Objective_1",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "OutPins": 1,
+      "PosX": 1805,
+      "PosY": 193,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Story",
+      "Weight": 0
+    },
+    {
+      "Assets": [
+        {
+          "Class": "NObjective",
+          "Uris": [
+            "/Game/Narra/NObjective/TestObjective"
+          ]
+        }
+      ],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Objective_1",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Story_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "State": "Failed"
+      },
+      "Name": "Objective",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Sound_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "OutPins": 1,
+      "PosX": 2397,
+      "PosY": 331,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Objective",
+      "Weight": 0
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Condition_1",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Condition_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 1
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "Cases": [
+          {
+            "Name": "Case #1"
+          },
+          {
+            "Name": "Case #2"
+          },
+          {
+            "Name": "Case #3"
+          }
+        ],
+        "Mode": "Random"
+      },
+      "Name": "Condition",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Pause_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        },
+        {
+          "LinkedNodeId": "NStoryBlock_End_2",
+          "MyPinIndex": 1,
+          "OtherPinIndex": 0
+        },
+        {
+          "LinkedNodeId": "NCustomStoryBlock_Test_0",
+          "MyPinIndex": 2,
+          "OtherPinIndex": 0
+        }
+      ],
+      "OutPins": 3,
+      "PosX": 1819,
+      "PosY": 854,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Condition",
+      "Weight": 0
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Pause_0",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Condition_1",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "Time": 0.9900000095367432
+      },
+      "Name": "Pause",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Sound_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 1
+        }
+      ],
+      "OutPins": 1,
+      "PosX": 2399,
+      "PosY": 872,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Delay",
+      "Weight": 0
+    },
+    {
+      "Assets": [
+        {
+          "Class": "NEntity",
+          "Uris": [
+            "/Game/Narra/NEntity/ValidCharacter"
+          ]
+        },
+        {
+          "Class": "SoundCue",
+          "Uris": [
+            "/Game/Narra/SoundCue/CH3a_R_1_Cue"
+          ]
+        }
+      ],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Sound_0",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Objective_1",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        },
+        {
+          "LinkedNodeId": "NStoryBlock_Pause_0",
+          "MyPinIndex": 1,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "3D": true
+      },
+      "Name": "Chrzaszcz",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_End_1",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "OutPins": 1,
+      "PosX": 3049,
+      "PosY": 545,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Sound",
+      "Weight": 0
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Condition_2",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Option_1",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        },
+        {
+          "LinkedNodeId": "NStoryBlock_Trigger_0",
+          "MyPinIndex": 1,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "Mode": "DoN",
+        "Passes": 1
+      },
+      "Name": "Condition",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Event_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        },
+        {
+          "LinkedNodeId": "NStoryBlock_Trigger_0",
+          "MyPinIndex": 1,
+          "OtherPinIndex": 0
+        }
+      ],
+      "OutPins": 2,
+      "PosX": 588,
+      "PosY": 667,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Condition",
+      "Weight": 0
+    },
+    {
+      "Assets": [
+        {
+          "Class": "NFact",
+          "Uris": [
+            "/Game/Narra/NFact/Testowanko"
+          ]
+        }
+      ],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Trigger_0",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Condition_2",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 1
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "Mode": "OnChange",
+        "Value": "Testowanko"
+      },
+      "Name": "Czekadło",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Condition_2",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 1
+        }
+      ],
+      "OutPins": 1,
+      "PosX": 1206,
+      "PosY": 964,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Trigger",
+      "Weight": 0
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_End_1",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Sound_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {},
+      "Name": "OKEnd",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 3638,
+      "PosY": 732,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "End",
+      "Weight": 0
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_End_2",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Condition_1",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 1
+        }
+      ],
+      "InPins": 1,
+      "Meta": {},
+      "Name": "RandomEnd",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 2418,
+      "PosY": 1193,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "End",
+      "Weight": 0
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NCustomStoryBlock_Test_0",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Condition_1",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 1
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "Enum": "A",
+        "String": "",
+        "Struct": "0"
+      },
+      "Name": "H.M. Customs",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 2418,
+      "PosY": 1193,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Custom",
+      "Weight": 0
+    },
+    {
+      "Assets": [
+        {
+          "Class": "NFact",
+          "Uris": [
+            "/Game/Narra/NFact/ValidFact",
+            "/Game/Narra/NFact/ValidFact",
+            "/Game/Narra/NFact/ValidFact",
+            "/Game/Narra/NFact/ValidFact",
+            "/Game/Narra/NFact/brakhajsu"
+          ]
+        }
+      ],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Condition_4",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Start_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 1
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "Cases": [
+          {
+            "Junction": [
+              "NAND"
+            ],
+            "Name": "",
+            "Rules": [
+              {
+                "Compare": "IsGreater",
+                "Fact": 0,
+                "Value": "3"
+              },
+              {
+                "Compare": "Equals",
+                "Fact": 1,
+                "Value": "10"
+              }
+            ]
+          },
+          {
+            "Junction": [
+              "AND"
+            ],
+            "Name": "",
+            "Rules": [
+              {
+                "Compare": "Contains",
+                "Fact": 2,
+                "Value": "Grzyb"
+              },
+              {
+                "Compare": "IsLessOrEqual",
+                "Fact": 3,
+                "Value": "0"
+              }
+            ]
+          },
+          {
+            "Junction": [],
+            "Name": "",
+            "Rules": [
+              {
+                "Compare": "Exists",
+                "Fact": 4,
+                "Value": ""
+              }
+            ]
+          }
+        ],
+        "Mode": "Branch"
+      },
+      "Name": "Condition",
+      "OutLinks": [],
+      "OutPins": 3,
+      "PosX": 192,
+      "PosY": 32,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Condition",
+      "Weight": 0
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Condition_3",
+      "InLinks": [],
+      "InPins": 1,
+      "Meta": {
+        "Cases": [
+          {
+            "Name": "Case #1"
+          }
+        ],
+        "Mode": "Iterate"
+      },
+      "Name": "Condition",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 1100,
+      "PosY": 200,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Condition",
+      "Weight": 0
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_TimeoutOption_0",
+      "InLinks": [],
+      "InPins": 1,
+      "Meta": {
+        "Timeout": 0.9900000095367432
+      },
+      "Name": "Timeout option",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 0,
+      "PosY": 0,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "ChoiceTimeout",
+      "Weight": 0
+    }
+  ],
+  "StoryName": "TestStory",
+  "StoryVersion": "4.12.0",
+  "UAssetVersion": "2.2.0"
+}

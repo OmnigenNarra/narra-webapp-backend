@@ -1,0 +1,9 @@
+#%RAML 1.0 Trait
+
+headers:
+  Authorization:
+    type: string
+    description: |
+      Obtained user's authentication token.
+    pattern: ^Token [0-9a-f]{40}$
+    example: Token e710edf5de9a719fb583b9394291fc7aa4a7b022

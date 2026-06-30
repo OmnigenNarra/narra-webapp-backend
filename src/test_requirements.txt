@@ -1,0 +1,12 @@
+-r requirements.txt
+better-exceptions
+django-extensions
+emoji
+hypothesis[django]
+pylint
+pylint-django==2.0.6
+pytest
+pytest-cov
+pytest-django
+pytest-pep8
+pyyaml

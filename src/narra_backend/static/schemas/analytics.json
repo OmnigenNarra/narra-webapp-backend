@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "definitions": {
+    "nodeEventEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "ModTime": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "StoryName": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Id",
+        "ModTime",
+        "Name",
+        "StoryName",
+        "Type"
+      ],
+      "type": "object"
+    }
+  },
+  "properties": {
+    "NodesEvents": {
+      "description": "Node-event entries",
+      "items": {
+        "$ref": "#/definitions/nodeEventEntry"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "NodesEvents"
+  ],
+  "type": "object"
+}

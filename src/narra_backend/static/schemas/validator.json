@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "definitions": {
+    "validationGlobalItem": {
+      "additionalProperties": false,
+      "properties": {
+        "Messages": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "Verdict": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Messages",
+        "Verdict"
+      ],
+      "type": "object"
+    },
+    "validationLinkEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "InNode": {
+          "type": "string"
+        },
+        "InPin": {
+          "type": "integer"
+        },
+        "Messages": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "OutNode": {
+          "type": "string"
+        },
+        "OutPin": {
+          "type": "integer"
+        },
+        "Verdict": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "InNode",
+        "InPin",
+        "Messages",
+        "OutNode",
+        "OutPin",
+        "Verdict"
+      ],
+      "type": "object"
+    },
+    "validationNodeEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "Fields": {
+          "items": {
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "Id": {
+          "type": "string"
+        },
+        "Messages": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "Verdict": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Fields",
+        "Id",
+        "Messages",
+        "Verdict"
+      ],
+      "type": "object"
+    },
+    "validationVariantEntry": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "properties": {
+    "Global": {
+      "items": {
+        "$ref": "#/definitions/validationGlobalItem"
+      },
+      "type": "array"
+    },
+    "Links": {
+      "items": {
+        "$ref": "#/definitions/validationLinkEntry"
+      },
+      "type": "array"
+    },
+    "Nodes": {
+      "items": {
+        "$ref": "#/definitions/validationNodeEntry"
+      },
+      "type": "array"
+    },
+    "Variants": {
+      "items": {
+        "$ref": "#/definitions/validationVariantEntry"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "Global",
+    "Links",
+    "Nodes",
+    "Variants"
+  ],
+  "type": "object"
+}

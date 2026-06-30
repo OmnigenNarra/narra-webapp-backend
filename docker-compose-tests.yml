@@ -1,0 +1,15 @@
+version: '3.7'
+
+
+volumes:
+  volume_ht:
+
+
+services:
+  backend:
+    build:
+      dockerfile: Dockerfile-tests
+    volumes:
+      - /app
+      - volume_ht:/app/.hypothesis
+    command: tests

@@ -1,0 +1,95 @@
+{
+  "Stories": [
+    {
+      "EntityCount": 2,
+      "EntityTypes": [
+        {
+          "Count": 1,
+          "Name": "NEntityTypeLocation"
+        },
+        {
+          "Count": 2,
+          "Name": "NEntityTypeObject"
+        }
+      ],
+      "MaxPath": 0,
+      "MinPath": 0,
+      "NodeCount": 6,
+      "NodeTypes": [
+        {
+          "Count": 1,
+          "Name": "Start"
+        },
+        {
+          "Count": 2,
+          "Name": "Block_EntityState"
+        },
+        {
+          "Count": 1,
+          "Name": "Action"
+        },
+        {
+          "Count": 1,
+          "Name": "Block_Deactivator"
+        },
+        {
+          "Count": 1,
+          "Name": "Story"
+        }
+      ],
+      "StoryName": "TestStory",
+      "StoryWeight": 70
+    },
+    {
+      "EntityCount": 0,
+      "EntityTypes": [],
+      "MaxPath": 5,
+      "MinPath": 2,
+      "NodeCount": 11,
+      "NodeTypes": [
+        {
+          "Count": 1,
+          "Name": "Start"
+        },
+        {
+          "Count": 1,
+          "Name": "Delay"
+        },
+        {
+          "Count": 4,
+          "Name": "Block_Test"
+        },
+        {
+          "Count": 2,
+          "Name": "End"
+        },
+        {
+          "Count": 3,
+          "Name": "Story"
+        }
+      ],
+      "StoryName": "TestStory",
+      "StoryWeight": 1
+    },
+    {
+      "EntityCount": 0,
+      "EntityTypes": [],
+      "MaxPath": 0,
+      "MinPath": 0,
+      "NodeCount": 0,
+      "NodeTypes": [],
+      "StoryName": "blabla",
+      "StoryWeight": 0
+    }
+  ],
+  "StoriesCount": [
+    {
+      "Count": 2,
+      "Name": "blabla"
+    },
+    {
+      "Count": 2,
+      "Name": "TestStory"
+    }
+  ]
+}

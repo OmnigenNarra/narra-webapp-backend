@@ -1,0 +1,18 @@
+{
+  "organization": {
+    "id": 1,
+    "name": "Org 1 (L3)"
+  },
+  "teams": [
+    {
+      "ctime": "2019-09-27T11:41:14Z",
+      "id": 1,
+      "name": "Org 1 - T1"
+    },
+    {
+      "ctime": "2019-09-27T11:41:30Z",
+      "id": 2,
+      "name": "Org 1 - T2"
+    }
+  ]
+}

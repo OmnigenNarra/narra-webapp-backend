@@ -1,0 +1,472 @@
+{
+  "Actions": [],
+  "Assets": [
+    {
+      "Class": "NFact",
+      "Meta": {},
+      "Uri": "/Game/Narra/NFact/ValidFact"
+    },
+    {
+      "Class": "NFact",
+      "Meta": {},
+      "Uri": "/Game/Narra/NFact/brakhajsu"
+    },
+    {
+      "Class": "NEntity",
+      "Meta": {
+        "Types": []
+      },
+      "Uri": "/Game/Narra/NEntity/ObjectPumpkin"
+    },
+    {
+      "Class": "NEntity",
+      "Meta": {
+        "Types": [
+          "NEntityTypeCharacter"
+        ]
+      },
+      "Uri": "/Game/Narra/NEntity/Jacek"
+    },
+    {
+      "Class": "SoundCue",
+      "Meta": {},
+      "Uri": "/Game/Narra/SoundCue/CH3a_R_1_Cue"
+    }
+  ],
+  "EntityTypes": [
+    {
+      "Children": [],
+      "Name": "NEntityTypeCharacter"
+    },
+    {
+      "Children": [],
+      "Name": "NEntityTypeLocation"
+    },
+    {
+      "Children": [],
+      "Name": "NEntityTypeObject"
+    }
+  ],
+  "Helpers": [
+    {
+      "Meta": {
+        "Text": "StickyNote such wow!"
+      },
+      "Name": "I'm a StickyNote",
+      "PosX": -468,
+      "PosY": -158,
+      "SizeX": 400,
+      "SizeY": 300,
+      "Type": "StickyNote"
+    },
+    {
+      "Meta": {
+        "Description": "Image desc",
+        "Uri": "img/da39a3ee5e6b4b0d3255bfef95601890afd80709/Obrazek_asdfgh.png"
+      },
+      "Name": "Obrazek asdfgh",
+      "PosX": 0,
+      "PosY": 0,
+      "SizeX": 400,
+      "SizeY": 300,
+      "Type": "Image"
+    }
+  ],
+  "JSONVersion": "4.4.0",
+  "ModTime": "0",
+  "Nodes": [
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Start_0",
+      "InLinks": [],
+      "InPins": 1,
+      "Meta": {},
+      "Name": "Start",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Trigger_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "OutPins": 1,
+      "PosX": -679,
+      "PosY": -28,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Start"
+    },
+    {
+      "Assets": [
+        {
+          "Class": "NFact",
+          "Uris": [
+            "/Game/Narra/NFact/ValidFact"
+          ]
+        }
+      ],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Trigger_0",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Start_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {
+        "Mode": "OnChange",
+        "Value": "ValidFact"
+      },
+      "Name": "Czekadło",
+      "OutLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_End_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "OutPins": 1,
+      "PosX": 1206,
+      "PosY": 964,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Trigger"
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_End_0",
+      "InLinks": [
+        {
+          "LinkedNodeId": "NStoryBlock_Trigger_0",
+          "MyPinIndex": 0,
+          "OtherPinIndex": 0
+        }
+      ],
+      "InPins": 1,
+      "Meta": {},
+      "Name": "KupaEnding",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 3034,
+      "PosY": -66,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "End"
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "Some action desc",
+      "Id": "NStoryBlock_Action_0",
+      "InLinks": [],
+      "InPins": 1,
+      "Meta": {
+        "Type": "Get"
+      },
+      "Name": "Some action",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 0,
+      "PosY": 0,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Action"
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Condition_0",
+      "InLinks": [],
+      "InPins": 1,
+      "Meta": {
+        "Mode": "DoN",
+        "Passes": 1
+      },
+      "Name": "Condition",
+      "OutLinks": [],
+      "OutPins": 2,
+      "PosX": 0,
+      "PosY": 0,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Condition"
+    },
+    {
+      "Assets": [
+        {
+          "Class": "NFact",
+          "Uris": [
+            "/Game/Narra/NFact/ValidFact",
+            "/Game/Narra/NFact/ValidFact",
+            "/Game/Narra/NFact/ValidFact",
+            "/Game/Narra/NFact/ValidFact",
+            "/Game/Narra/NFact/brakhajsu"
+          ]
+        }
+      ],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Condition_4",
+      "InLinks": [],
+      "InPins": 1,
+      "Meta": {
+        "Cases": [
+          {
+            "Junction": [
+              "NAND"
+            ],
+            "Name": "",
+            "Rules": [
+              {
+                "Compare": "IsGreater",
+                "Fact": 0,
+                "Value": "3"
+              },
+              {
+                "Compare": "Equals",
+                "Fact": 1,
+                "Value": "10"
+              }
+            ]
+          },
+          {
+            "Junction": [
+              "AND"
+            ],
+            "Name": "",
+            "Rules": [
+              {
+                "Compare": "Contains",
+                "Fact": 2,
+                "Value": "Grzyb"
+              },
+              {
+                "Compare": "IsLessOrEqual",
+                "Fact": 3,
+                "Value": "0"
+              }
+            ]
+          },
+          {
+            "Junction": [],
+            "Name": "",
+            "Rules": [
+              {
+                "Compare": "Exists",
+                "Fact": 4,
+                "Value": ""
+              }
+            ]
+          }
+        ],
+        "Mode": "Branch"
+      },
+      "Name": "Condition",
+      "OutLinks": [],
+      "OutPins": 3,
+      "PosX": 0,
+      "PosY": 0,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Condition"
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Condition_3",
+      "InLinks": [],
+      "InPins": 1,
+      "Meta": {
+        "Mode": "Iterate"
+      },
+      "Name": "Condition",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 1100,
+      "PosY": 200,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Condition"
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Pause_0",
+      "InLinks": [],
+      "InPins": 1,
+      "Meta": {
+        "Time": 0.9900000095367432
+      },
+      "Name": "Pause / Delay",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 0,
+      "PosY": 0,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Delay"
+    },
+    {
+      "Assets": [
+        {
+          "Class": "NEntity",
+          "Uris": [
+            "/Game/Narra/NEntity/Jacek"
+          ]
+        }
+      ],
+      "Components": [],
+      "Description": "Ważna rzecz",
+      "Id": "NStoryBlock_DialogueLine_0",
+      "InLinks": [],
+      "InPins": 1,
+      "Meta": {
+        "Id": "",
+        "IdAuto": true,
+        "IsExpanded": false,
+        "Text": "Posadził dzad rzepkę.\r\nAle nie wiedział po co.",
+        "Time": 175.5
+      },
+      "Name": "Wypowiedź ąę",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 0,
+      "PosY": 0,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "DialogueLine"
+    },
+    {
+      "Assets": [],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Event_0",
+      "InLinks": [],
+      "InPins": 1,
+      "Meta": {
+        "Id": "WydarzenieEkstra"
+      },
+      "Name": "Nowy Event",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 0,
+      "PosY": 0,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Event"
+    },
+    {
+      "Assets": [
+        {
+          "Class": "NFact",
+          "Uris": [
+            "/Game/Narra/NFact/ValidFact"
+          ]
+        }
+      ],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Fact_0",
+      "InLinks": [],
+      "InPins": 1,
+      "Meta": {
+        "Mode": "AddElement",
+        "Value": "Rybka"
+      },
+      "Name": "Miał, to fakt",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 0,
+      "PosY": 0,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Fact"
+    },
+    {
+      "Assets": [],
+      "Components": [
+        {
+          "Assets": [
+            {
+              "Class": "NFact",
+              "Uris": [
+                "/Game/Narra/NFact/ValidFact"
+              ]
+            }
+          ],
+          "Components": [],
+          "Description": "",
+          "Id": "NStoryBlock_Fact_1",
+          "InLinks": [],
+          "InPins": 1,
+          "Meta": {
+            "Mode": "AddElement",
+            "Value": "Rybka"
+          },
+          "Name": "Miał, to fakt",
+          "OutLinks": [],
+          "OutPins": 1,
+          "PosX": 0,
+          "PosY": 0,
+          "Tags": [],
+          "TriggerTags": [],
+          "Type": "Fact"
+        }
+      ],
+      "Description": "",
+      "Id": "NStoryBlock_TimeoutOption_0",
+      "InLinks": [],
+      "InPins": 1,
+      "Meta": {
+        "Timeout": 0.9900000095367432
+      },
+      "Name": "Timeout option",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 0,
+      "PosY": 0,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "ChoiceTimeout"
+    },
+    {
+      "Assets": [
+        {
+          "Class": "SoundCue",
+          "Uris": [
+            "/Game/Narra/SoundCue/CH3a_R_1_Cue"
+          ]
+        }
+      ],
+      "Components": [],
+      "Description": "",
+      "Id": "NStoryBlock_Sound_0",
+      "InLinks": [],
+      "InPins": 1,
+      "Meta": {
+        "3D": false
+      },
+      "Name": "Chrzaszcz",
+      "OutLinks": [],
+      "OutPins": 1,
+      "PosX": 0,
+      "PosY": 0,
+      "Tags": [],
+      "TriggerTags": [],
+      "Type": "Sound"
+    }
+  ],
+  "StoryName": "",
+  "StoryVersion": "4.11.0",
+  "UAssetVersion": "1.1.0"
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 123456,
+    "story_name": "MyStory1",
+    "uri": "/api/v1/package/123456"
+  },
+  {
+    "id": 7890123,
+    "story_name": "MyStory2",
+    "uri": "/api/v1/package/7890123"
+  }
+]

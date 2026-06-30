@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "story_name": {
+      "type": "string"
+    },
+    "uri": {
+      "format": "uri-reference",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "story_name",
+    "uri"
+  ],
+  "type": "object"
+}

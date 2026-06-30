@@ -1,0 +1,32 @@
+{
+  "NodesEvents": [
+    {
+      "Id": "8664A0AA43C7422767324CAD32E5C07D",
+      "ModTime": "+00:00:00.000",
+      "Name": "Start",
+      "StoryName": "TestStory",
+      "Type": "Activate"
+    },
+    {
+      "Id": "8664A0AA43C7422767324CAD32E5C07D",
+      "ModTime": "+00:00:00.000",
+      "Name": "Start",
+      "StoryName": "TestStory",
+      "Type": "Complete"
+    },
+    {
+      "Id": "C80F85D74D426103D417C9915968EEB0",
+      "ModTime": "+00:00:00.000",
+      "Name": "Action",
+      "StoryName": "TestStory",
+      "Type": "Activate"
+    },
+    {
+      "Id": "C80F85D74D426103D417C9915968EEB0",
+      "ModTime": "+00:00:00.000",
+      "Name": "Action",
+      "StoryName": "TestStory",
+      "Type": "Deactivate"
+    }
+  ]
+}

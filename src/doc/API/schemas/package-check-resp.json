@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "definitions": {
+    "version": {
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "current_json_version": {
+      "$ref": "#/definitions/version"
+    },
+    "is_version_supported": {
+      "type": "boolean"
+    },
+    "migration_required": {
+      "type": "boolean"
+    },
+    "posted_json_version": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/version"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "current_json_version",
+    "posted_json_version",
+    "is_version_supported",
+    "migration_required"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,124 @@
+version: '3.7'
+
+
+volumes:
+  volume_db:
+  volume_redis:
+
+
+networks:
+  net_cache:
+  net_db:
+  net_back:
+  net_front:
+
+
+services:
+  postgres:
+    image: narra-webapp/postgres:latest
+    build: ./postgres/
+    container_name: narra-postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - volume_db:/var/lib/postgresql/data
+      - /var/run/postgresql
+      - /tmp
+    networks:
+      - net_db
+    read_only: true
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 5
+        window: 120s
+
+  redis:
+    image: narra-webapp/redis:latest
+    build: ./redis/
+    container_name: narra-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - volume_redis:/data
+    networks:
+      - net_cache
+    read_only: true
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 5
+        window: 120s
+
+  sendgrid:
+    image: narra-webapp/sendgrid:latest
+    build: ./sendgrid/
+    container_name: narra-sendgrid
+    ports:
+      - "18025:18025"
+    networks:
+      - net_back
+    read_only: true
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 5
+        window: 120s
+
+  backend:
+    image: narra-webapp/backend:latest
+    build:
+      context: ./
+      args:
+        APPLICATION: '/app'
+        STACK: 'heroku-18'
+        REDIS_URL: 'redis://:foobarpass@narra-redis:6379'
+        DATABASE_URL: 'postgres://narra_user:foobarpass@narra-postgres:5432/narra'
+        DJANGO_SECRET_KEY: 'is_THis*a#$$ecRET%keY?(iS)th1$$^jUSt@f4ntasy?'
+      dockerfile: Dockerfile
+    container_name: narra-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - /app
+      - /tmp
+    networks:
+      - net_cache
+      - net_db
+      - net_back
+    read_only: true
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 5
+        window: 120s
+    depends_on:
+      - postgres
+      - redis
+
+  nginx:
+    image: narra-webapp/nginx:latest
+    build: ./nginx/
+    container_name: narra-nginx
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    volumes:
+      - /var/cache/nginx
+      - /var/run
+    networks:
+      - net_back
+      - net_front
+    read_only: true
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 5
+        window: 120s
+    depends_on:
+      - backend

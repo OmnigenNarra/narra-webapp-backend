@@ -1,0 +1,1387 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "definitions": {
+    "helperEntryComment": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/helperTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {},
+              "type": "object"
+            },
+            "Type": {
+              "const": "Comment"
+            }
+          },
+          "required": [
+            "Meta",
+            "Type"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "helperEntryImage": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/helperTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Description": {
+                  "type": "string"
+                },
+                "Uri": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Description",
+                "Uri"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Image"
+            }
+          },
+          "required": [
+            "Meta",
+            "Type"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "helperEntrySequence": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/helperTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "ContainedNodes": {
+                  "items": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/definitions/nodeIdGeneric"
+                      },
+                      {
+                        "$ref": "#/definitions/nodeIdCustom"
+                      }
+                    ]
+                  },
+                  "type": "array"
+                },
+                "Sequence": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ContainedNodes",
+                "Sequence"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Sequence"
+            }
+          },
+          "required": [
+            "Meta",
+            "Type"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "helperEntryStickyNote": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/helperTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Text"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "StickyNote"
+            }
+          },
+          "required": [
+            "Meta",
+            "Type"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "helperEntryUnion": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/helperTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Color": {
+                  "type": "string"
+                },
+                "ContainedNodes": {
+                  "items": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/definitions/nodeIdGeneric"
+                      },
+                      {
+                        "$ref": "#/definitions/nodeIdCustom"
+                      }
+                    ]
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "Color",
+                "ContainedNodes"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Union"
+            }
+          },
+          "required": [
+            "Meta",
+            "Type"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "helperTypeGeneric": {
+      "additionalProperties": false,
+      "properties": {
+        "Meta": {
+          "type": "object"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "PosX": {
+          "type": "integer"
+        },
+        "PosY": {
+          "type": "integer"
+        },
+        "SizeX": {
+          "type": "integer"
+        },
+        "SizeY": {
+          "type": "integer"
+        },
+        "Type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Meta",
+        "Name",
+        "PosX",
+        "PosY",
+        "SizeX",
+        "SizeY",
+        "Type"
+      ],
+      "type": "object"
+    },
+    "nodeAssetEntry": {
+      "properties": {
+        "Class": {
+          "$ref": "#/definitions/packageAssetEntryClass"
+        },
+        "Uris": {
+          "items": {
+            "format": "uri-reference",
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "Class",
+        "Uris"
+      ],
+      "type": "object"
+    },
+    "nodeEntryAction": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Type": {
+                  "regex": "^[_A-Za-z][_0-9A-Za-z]{0,127}$",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Type"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Action"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryChoice": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Label": {
+                  "type": "string"
+                },
+                "Order": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "Label",
+                "Order"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Choice"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryChoiceTimeout": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Timeout": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "Timeout"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "ChoiceTimeout"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryConditionBranch": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Cases": {
+                  "items": {
+                    "$ref": "#/definitions/nodeEntryConditionBranchCase"
+                  },
+                  "type": "array"
+                },
+                "Mode": {
+                  "const": "Branch"
+                }
+              },
+              "required": [
+                "Cases",
+                "Mode"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Condition"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryConditionBranchCase": {
+      "additionalProperties": false,
+      "properties": {
+        "Junction": {
+          "items": {
+            "$ref": "#/definitions/nodeEntryConditionBranchCaseJunction"
+          },
+          "type": "array"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Rules": {
+          "items": {
+            "$ref": "#/definitions/nodeEntryConditionBranchCaseRule"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "Name",
+        "Junction",
+        "Rules"
+      ],
+      "type": "object"
+    },
+    "nodeEntryConditionBranchCaseJunction": {
+      "enum": [
+        "AND",
+        "NAND",
+        "OR",
+        "NOR",
+        "XOR",
+        "NXOR"
+      ],
+      "type": "string"
+    },
+    "nodeEntryConditionBranchCaseRule": {
+      "additionalProperties": false,
+      "properties": {
+        "Compare": {
+          "enum": [
+            "Exists",
+            "Equals",
+            "Contains",
+            "IsLess",
+            "IsLessOrEqual",
+            "IsGreaterOrEqual",
+            "IsGreater"
+          ],
+          "type": "string"
+        },
+        "Fact": {
+          "type": "integer"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Compare",
+        "Fact",
+        "Value"
+      ],
+      "type": "object"
+    },
+    "nodeEntryConditionDoN": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Mode": {
+                  "const": "DoN"
+                },
+                "Passes": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "Mode",
+                "Passes"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Condition"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryConditionIterate": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Mode": {
+                  "const": "Iterate"
+                }
+              },
+              "required": [
+                "Mode"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Condition"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryConditionRandom": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Mode": {
+                  "const": "Random"
+                }
+              },
+              "required": [
+                "Mode"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Condition"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryConditionSwitch": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Cases": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "Mode": {
+                  "const": "Switch"
+                }
+              },
+              "required": [
+                "Cases",
+                "Mode"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Condition"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryCustom": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeCustom"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": true,
+              "properties": {},
+              "propertyNames": {
+                "regex": "^[A-Za-z_][0-9A-Za-z_]{0,127}$"
+              },
+              "type": "object"
+            },
+            "Type": {
+              "const": "Custom"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryDelay": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Time": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "Time"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Delay"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryDialogueLine": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Id": {
+                  "type": "string"
+                },
+                "IdAuto": {
+                  "type": "boolean"
+                },
+                "IsExpanded": {
+                  "type": "boolean"
+                },
+                "Text": {
+                  "type": "string"
+                },
+                "Time": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "Id",
+                "IdAuto",
+                "IsExpanded",
+                "Text",
+                "Time"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "DialogueLine"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryEnd": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {},
+              "type": "object"
+            },
+            "Type": {
+              "const": "End"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryEvent": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Id"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Event"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryFact": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Mode": {
+                  "enum": [
+                    "Set",
+                    "IncrementBy",
+                    "DecrementBy",
+                    "AddElement",
+                    "RemoveElement"
+                  ],
+                  "type": "string"
+                },
+                "Value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Mode",
+                "Value"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Fact"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryObjective": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "State": {
+                  "enum": [
+                    "Inactive",
+                    "Active",
+                    "Completed",
+                    "Failed"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "State"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Objective"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryReroute": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {},
+              "type": "object"
+            },
+            "Type": {
+              "const": "Reroute"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntrySound": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "3D": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "3D"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Sound"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryStart": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {},
+              "type": "object"
+            },
+            "Type": {
+              "const": "Start"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryStory": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {},
+              "type": "object"
+            },
+            "Type": {
+              "const": "Story"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeEntryTrigger": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeGeneric"
+        },
+        {
+          "properties": {
+            "Meta": {
+              "additionalProperties": false,
+              "properties": {
+                "Mode": {
+                  "enum": [
+                    "OnChange",
+                    "OnIncrease",
+                    "OnDecrease",
+                    "OnValueReached"
+                  ],
+                  "type": "string"
+                },
+                "Value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Value",
+                "Mode"
+              ],
+              "type": "object"
+            },
+            "Type": {
+              "const": "Trigger"
+            }
+          },
+          "required": [
+            "Type",
+            "Meta"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeIdCustom": {
+      "regex": "^NCustomStoryBlock_[A-Za-z]+_[0-9]+$",
+      "type": "string"
+    },
+    "nodeIdGeneric": {
+      "regex": "^NStoryBlock_[A-Za-z]+_[0-9]+$",
+      "type": "string"
+    },
+    "nodeLink": {
+      "properties": {
+        "LinkedNodeId": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/nodeIdGeneric"
+            },
+            {
+              "$ref": "#/definitions/nodeIdCustom"
+            }
+          ]
+        },
+        "MyPinIndex": {
+          "type": "integer"
+        },
+        "OtherPinIndex": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "LinkedNodeId",
+        "MyPinIndex",
+        "OtherPinIndex"
+      ],
+      "type": "object"
+    },
+    "nodeTypeBase": {
+      "properties": {
+        "Assets": {
+          "items": {
+            "$ref": "#/definitions/nodeAssetEntry"
+          },
+          "type": "array"
+        },
+        "Components": {
+          "items": {
+            "$ref": "#/definitions/packageNodeEntry"
+          },
+          "type": "array"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "InLinks": {
+          "items": {
+            "$ref": "#/definitions/nodeLink"
+          },
+          "type": "array"
+        },
+        "Meta": {
+          "type": "object"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "OutLinks": {
+          "items": {
+            "$ref": "#/definitions/nodeLink"
+          },
+          "type": "array"
+        },
+        "OutPins": {
+          "type": "integer"
+        },
+        "PosX": {
+          "type": "integer"
+        },
+        "PosY": {
+          "type": "integer"
+        },
+        "Tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "TriggerTags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "Type": {
+          "enum": [
+            "Action",
+            "Choice",
+            "ChoiceTimeout",
+            "Condition",
+            "Custom",
+            "Delay",
+            "DialogueLine",
+            "End",
+            "Event",
+            "Fact",
+            "Objective",
+            "Reroute",
+            "Sound",
+            "Start",
+            "Story",
+            "Trigger"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "Id",
+        "Type",
+        "Name",
+        "Description",
+        "PosX",
+        "PosY",
+        "Assets",
+        "Meta",
+        "InLinks",
+        "OutLinks",
+        "OutPins",
+        "Components",
+        "Tags",
+        "TriggerTags"
+      ],
+      "type": "object"
+    },
+    "nodeTypeCustom": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeBase"
+        },
+        {
+          "properties": {
+            "Id": {
+              "$ref": "#/definitions/nodeIdCustom"
+            }
+          },
+          "required": [
+            "Id"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "nodeTypeGeneric": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/nodeTypeBase"
+        },
+        {
+          "properties": {
+            "Id": {
+              "$ref": "#/definitions/nodeIdGeneric"
+            }
+          },
+          "required": [
+            "Id"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "packageActionEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Params": {
+          "items": {
+            "$ref": "#/definitions/packageActionParam"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "Name",
+        "Params"
+      ],
+      "type": "object"
+    },
+    "packageActionParam": {
+      "additionalProperties": false,
+      "properties": {
+        "AssetClass": {
+          "$ref": "#/definitions/packageAssetEntryClass"
+        },
+        "EntityTypes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "Label": {
+          "type": "string"
+        },
+        "Mandatory": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "AssetClass",
+        "EntityTypes",
+        "Label",
+        "Mandatory"
+      ],
+      "type": "object"
+    },
+    "packageAssetEntry": {
+      "properties": {
+        "Class": {
+          "$ref": "#/definitions/packageAssetEntryClass"
+        },
+        "Meta": {
+          "additionalProperties": false,
+          "properties": {
+            "Types": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "Uri": {
+          "format": "uri-reference",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Class",
+        "Meta",
+        "Uri"
+      ],
+      "type": "object"
+    },
+    "packageAssetEntryClass": {
+      "enum": [
+        "NEntity",
+        "NFact",
+        "NObjective",
+        "NStory",
+        "SoundCue"
+      ],
+      "type": "string"
+    },
+    "packageEntityTypesEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "Children": {
+          "items": {
+            "$ref": "#/definitions/packageEntityTypesEntry"
+          },
+          "type": "array"
+        },
+        "Name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Children",
+        "Name"
+      ],
+      "type": "object"
+    },
+    "packageHelperEntry": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/helperEntryComment"
+        },
+        {
+          "$ref": "#/definitions/helperEntryImage"
+        },
+        {
+          "$ref": "#/definitions/helperEntrySequence"
+        },
+        {
+          "$ref": "#/definitions/helperEntryStickyNote"
+        },
+        {
+          "$ref": "#/definitions/helperEntryUnion"
+        }
+      ]
+    },
+    "packageNodeEntry": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/nodeEntryAction"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryChoice"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryChoiceTimeout"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryConditionBranch"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryConditionDoN"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryConditionIterate"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryConditionRandom"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryConditionSwitch"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryCustom"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryDelay"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryDialogueLine"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryEnd"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryEvent"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryFact"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryObjective"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryReroute"
+        },
+        {
+          "$ref": "#/definitions/nodeEntrySound"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryStart"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryStory"
+        },
+        {
+          "$ref": "#/definitions/nodeEntryTrigger"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "Actions": {
+      "description": "Package actions",
+      "items": {
+        "$ref": "#/definitions/packageActionEntry"
+      },
+      "type": "array"
+    },
+    "Assets": {
+      "description": "Package assets",
+      "items": {
+        "$ref": "#/definitions/packageAssetEntry"
+      },
+      "type": "array"
+    },
+    "EntityTypes": {
+      "description": "Entity types structure",
+      "items": {
+        "$ref": "#/definitions/packageEntityTypesEntry"
+      },
+      "type": "array"
+    },
+    "Helpers": {
+      "description": "Story helpers",
+      "items": {
+        "$ref": "#/definitions/packageHelperEntry"
+      },
+      "type": "array"
+    },
+    "JSONVersion": {
+      "const": "4.3.0",
+      "description": "JSON version marker"
+    },
+    "ModTime": {
+      "description": "Modification timestamp",
+      "regex": "^[0-9]+$",
+      "type": "string"
+    },
+    "Nodes": {
+      "description": "Nodes in order of apperance",
+      "items": {
+        "$ref": "#/definitions/packageNodeEntry"
+      },
+      "type": "array"
+    },
+    "StoryName": {
+      "description": "Story name",
+      "maxLength": 128,
+      "type": "string"
+    },
+    "StoryVersion": {
+      "description": "Story version marker",
+      "regex": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "type": "string"
+    },
+    "UAssetVersion": {
+      "description": "UAsset version marker",
+      "regex": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "Assets",
+    "EntityTypes",
+    "JSONVersion",
+    "ModTime",
+    "Nodes",
+    "StoryName",
+    "StoryVersion",
+    "UAssetVersion"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,96 @@
+daemon off;
+# Heroku dynos have at least 4 cores.
+worker_processes <%= ENV['NGINX_WORKERS'] || 4 %>;
+
+events {
+	use epoll;
+	accept_mutex on;
+	worker_connections 1024;
+}
+
+http {
+	gzip on;
+	gzip_static on;
+	gzip_comp_level 2;
+	gzip_min_length 512;
+
+	brotli on;
+	brotli_static on;
+	brotli_comp_level 6;
+	brotli_min_length 20;
+	brotli_types text/xml image/svg+xml application/x-font-ttf image/vnd.microsoft.icon application/x-font-opentype application/json font/eot application/vnd.ms-fontobject application/javascript font/otf application/xml application/xhtml+xml text/javascript application/x-javascript text/plain application/x-font-truetype application/xml+rss image/x-icon font/opentype text/css image/x-win-bitmap;
+
+	server_tokens off;
+
+	log_format custom 'measure#nginx.service=$request_time request="$request" '
+		'status_code=$status request_id=$http_x_request_id '
+		'remote_addr="$remote_addr" forwarded_for="$http_x_forwarded_for" '
+		'forwarded_proto="$http_x_forwarded_proto" via="$http_via" '
+		'body_bytes_sent=$body_bytes_sent referer="$http_referer" '
+		'user_agent="$http_user_agent"';
+	access_log logs/nginx/access.log custom;
+	error_log logs/nginx/error.log;
+
+	include mime.types;
+	default_type application/octet-stream;
+	sendfile on;
+
+	# Must read the body in 5 seconds.
+	client_body_timeout 5;
+
+	upstream app_server {
+		server unix:/tmp/nginx.socket fail_timeout=0;
+	}
+
+	server {
+		listen <%= ENV["PORT"] %>;
+		server_name _;
+		keepalive_timeout 5;
+		autoindex off;
+		root /app;
+
+		add_header 'Referrer-Policy' 'strict-origin-when-cross-origin' always;
+		add_header 'Strict-Transport-Security' 'max-age=15768000;includeSubdomains' always;
+		add_header 'X-Content-Type-Options' 'nosniff' always;
+		add_header 'X-XSS-Protection' '1; mode=block' always;
+		add_header 'X-Frame-Options' 'SAMEORIGIN' always;
+
+		add_header 'Report-To' '{"group": "security", "max-age": 10886400, "endpoints": [{"url": "https://sentry.io/api/1517025/security/?sentry_key=b3738e83815a4bc6ae335ea8bae3ee6b"}]}' always;
+
+		add_header 'Content-Security-Policy' "default-src 'none'; connect-src 'self' https://api.intercom.io https://api-iam.intercom.io https://api-ping.intercom.io https://nexus-websocket-a.intercom.io https://nexus-websocket-b.intercom.io https://nexus-long-poller-a.intercom.io https://nexus-long-poller-b.intercom.io wss://nexus-websocket-a.intercom.io wss://nexus-websocket-b.intercom.io https://uploads.intercomcdn.com https://uploads.intercomusercontent.com https://www.google-analytics.com https://sentry.io; child-src 'self' https://share.intercom.io https://intercom-sheets.com https://www.intercom-reporting.com https://www.youtube.com https://player.vimeo.com https://fast.wistia.net; img-src 'self' data: https: https://js.intercomcdn.com https://static.intercomassets.com https://downloads.intercomcdn.com https://uploads.intercomusercontent.com https://gifs.intercomcdn.com https://messenger-apps.intercom.io https://*.intercom-attachments.com https://www.googletagmanager.com https://www.google-analytics.com; font-src 'self' data: https://fonts.gstatic.com https://kit-free.fontawesome.com https://js.intercomcdn.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://kit.fontawesome.com https://app.intercom.io https://js.intercomcdn.com https://widget.intercom.io https://browser.sentry-cdn.com https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; form-action 'self' https://intercom.help https://api-iam.intercom.io; media-src 'self' data: https://js.intercomcdn.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://kit-free.fontawesome.com/releases/latest/css/; report-uri https://sentry.io/api/1517025/security/?sentry_key=b3738e83815a4bc6ae335ea8bae3ee6b; report-to security" always;
+
+		if ($http_x_forwarded_proto != 'https') {
+			return 301 https://$host:<%= ENV['EXP_HTTPS_PORT'] || 443 %>$request_uri$is_args$args;
+		}
+
+		location ~ ^/(favicon\.png|robots\.txt|security\.txt|narra\.gpg|googlece1d6e4785895a85\.html|app/intercom\.html|app/blank\.html)$ {
+			root /app/static;
+			try_files $uri $uri.html =404;
+		}
+
+		location /admin/ {
+			auth_basic 'Restricted';
+			auth_basic_user_file /app/config/.htpasswd;
+			try_files $uri $uri/ $uri/index.html @app;
+		}
+
+		location ~ ^/static/app {
+			index index.html;
+		}
+
+#		location ~ ^/static/doc {
+#			index index.svg;
+#		}
+
+		location / {
+			try_files $uri $uri/ $uri/index.html @app;
+		}
+
+		location @app {
+			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+			proxy_set_header Host $http_host;
+			proxy_redirect off;
+			proxy_pass http://app_server;
+		}
+	}
+}

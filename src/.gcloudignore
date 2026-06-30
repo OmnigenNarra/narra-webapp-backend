@@ -1,0 +1,9 @@
+*.egg-info/
+.gcloudignore
+.git
+.gitignore
+__pycache__/
+*\.py[co]$
+setup.py
+.venv/
+node_modules/

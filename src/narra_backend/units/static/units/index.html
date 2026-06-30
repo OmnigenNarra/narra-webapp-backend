@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="icon" href="/static/favicon.png">
+		<title>Narra management</title>
+		<link href="/static/css/bootstrap-reboot.min.css" rel="stylesheet">
+		<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/static/units/css/index.css" rel="stylesheet">
+	</head>
+	<body class="text-center">
+
+		<div class="messenger box" style="display: none"></div>
+
+		<br>
+
+		<div class="signin box" style="display: none">
+			<form class="form-signin" method="post" encoding="utf-8" onsubmit="return false;">
+				<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+				<label for="signin-email" class="sr-only">Email address</label>
+				<input type="signin-email" id="signin-email" name="signin-email" class="form-control" placeholder="Email address" required autofocus>
+				<label for="signin-passwd" class="sr-only">Password</label>
+				<input type="password" id="signin-passwd" name="signin-passwd" class="form-control" placeholder="Password" required>
+				<button id="signin-form-submit-btn" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
+				<div class="checkbox mb-3">
+					<label><a href="javascript:void(0)" class="password-rst">Forgot password</a></label>
+				</div>
+			</form>
+		</div>
+
+		<div class="teams-list box" style="display: none">
+			Organization: <b class="org-name">***</b> (<a href="javascript:void(0)" class="signout">sign out</a>)
+			<div class="row" style="display: none">
+				<div class="col-12 col-sm-6 col-lg-8">
+					<a href="javascript:void(0)" class="team-name" data-team-id="***">***</a> (<span class="team-ctime">***</span>)
+				</div>
+				<div class="col-6 col-lg-4">
+					<button class="btn btn-secondary btn-lg btn-block team-remove-btn" type="button" data-team-id="***">Remove</button>
+				</div>
+			</div>
+			<button id="team-add-form-show-btn" class="btn btn-lg btn-primary btn-block" type="button">Add team...</button>
+
+			<div id="team-add-form" style="display: none">
+				<form method="post" encoding="utf-8" onsubmit="return false;">
+					<label for="team-name" class="sr-only">Team name</label>
+					<input type="text" id="team-name" name="team-name" class="form-control" placeholder="Team name" required autofocus>
+					<button id="team-add-form-submit-btn" class="btn btn-lg btn-primary btn-block" type="button">Create</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="members-list box" style="display: none">
+			Organization: <b><a href="javascript:void(0)" class="org-name">***</a></b> (<a href="javascript:void(0)" class="signout">sign out</a>)<br>
+			Team: <b class="team-name" data-team-id="***">***</b><br>
+			<div class="row" style="display: none">
+				<div class="col-12 col-sm-6 col-lg-8 member-email">***</div>
+				<div class="col-6 col-lg-4">
+					<button class="btn btn-secondary btn-lg btn-block member-remove-btn" type="button" data-team-member-id="***">Remove</button>
+				</div>
+			</div>
+			<button id="member-add-form-show-btn" class="btn btn-lg btn-primary btn-block" type="button">Add member...</button>
+
+			<div id="member-add-form" style="display: none">
+				<form method="post" encoding="utf-8" onsubmit="return false;">
+					<label for="member-email" class="sr-only">Member email</label>
+					<input type="email" id="member-email" name="member-email" class="form-control" placeholder="Member email" required>
+					<button id="member-add-form-submit-btn" class="btn btn-lg btn-primary btn-block" type="button">Create</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="password-rst-req box" style="display: none">
+			<div id="password-rst-req-form">
+				<form method="post" encoding="utf-8" onsubmit="return false;">
+					<label for="password-rst-req-email" class="sr-only">Member email</label>
+					<input type="email" id="password-rst-req-email" name="password-rst-req-email" class="form-control" placeholder="Member email" required>
+					<button id="password-rst-req-form-submit-btn" class="btn btn-lg btn-primary btn-block" type="button">Proceed</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="password-rst-act box" style="display: none">
+			<div id="password-rst-act-form">
+				<form method="post" encoding="utf-8" onsubmit="return false;">
+					<input type="hidden" id="password-rst-act-code" name="password-rst-act-code" readonly>
+					<label for="password-rst-act-email" class="sr-only">Member email</label>
+					<input type="email" id="password-rst-act-email" name="password-rst-act-email" class="form-control" placeholder="Member email" required readonly>
+					<label for="password-rst-act-passwd" class="sr-only">Password</label>
+					<input type="password" id="password-rst-act-passwd" name="password-rst-act-passwd" class="form-control" placeholder="Password" required>
+					<label for="password-rst-act-passwd2" class="sr-only">Password (again)</label>
+					<input type="password" id="password-rst-act-passwd2" name="password-rst-act-passwd2" class="form-control" placeholder="Password (again)" required>
+					<button id="password-rst-act-form-submit-btn" class="btn btn-lg btn-primary btn-block" type="button">Reset</button>
+				</form>
+			</div>
+		</div>
+
+		<script src="/static/units/js/index.js"></script>
+	</body>
+</html>

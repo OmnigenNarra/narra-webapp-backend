@@ -1,0 +1,23 @@
+{
+  "members": [
+    {
+      "email": "test-T2-M1@example.com",
+      "id": 1,
+      "jtime": "2019-09-27T13:46:25.445564Z"
+    },
+    {
+      "email": "test-T2-M2@example.com",
+      "id": 2,
+      "jtime": "2019-09-27T13:48:26.027670Z"
+    }
+  ],
+  "organization": {
+    "id": 1,
+    "name": "Org 1 (L3)"
+  },
+  "team": {
+    "ctime": "2019-09-27T11:41:30Z",
+    "id": 2,
+    "name": "Org 1 - T2"
+  }
+}

@@ -1,0 +1,55 @@
+FROM narra-webapp/backend:latest AS runtime
+
+FROM heroku/heroku:18-build AS test_build
+
+ARG STACK
+ARG APPLICATION
+ARG REDIS_URL
+ARG DATABASE_URL
+ARG DJANGO_SECRET_KEY
+
+USER root
+
+COPY --from=runtime ${APPLICATION} ${APPLICATION}
+
+COPY --from=runtime /etc/ld.so.conf.d /etc/ld.so.conf.d
+
+USER ${HEROKU_USER}
+
+ENV \
+    PORT=8000 \
+    HOME=${APPLICATION} \
+    APPLICATION=${APPLICATION} \
+    PATH=${APPLICATION}/.heroku/python/bin:${PATH} \
+    LD_LIBRARY_PATH=${APPLICATION}/.heroku/vendor/lib:${APPLICATION}/.heroku/python/lib \
+    LIBRARY_PATH=${APPLICATION}/.heroku/vendor/lib:${APPLICATION}/.heroku/python/lib \
+    PYTHONHASHSEED=random \
+    PYTHONUNBUFFERED=true \
+    PYTHONHOME=${APPLICATION}/.heroku/python \
+    PYTHONPATH=${APPLICATION} \
+    GUNICORN_CMD_ARGS="--access-logfile -" \
+    STATIC_ROOT=${APPLICATION}/static \
+    MEDIA_ROOT=${APPLICATION}/media
+
+ENV \
+    REDIS_URL=${REDIS_URL} \
+    DATABASE_URL=${DATABASE_URL} \
+    FAKE_SENDGRID_SRV_HOST=sendgrid \
+    FAKE_SENDGRID_SRV_PORT=18025 \
+    DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
+
+ENV \
+    USE_JSONSCHEMA=1 \
+    COVERAGE_FILE=/tmp/.coverage \
+    HTTP_AUTHZ="bmFycmE6bmFycmE="
+
+WORKDIR ${APPLICATION}
+
+RUN \
+    ${PYTHONHOME}/bin/pip install --no-cache-dir --requirement test_requirements.txt
+
+COPY docker-entrypoint.sh /_run
+
+ENTRYPOINT ["/_run"]
+
+CMD ["tests"]

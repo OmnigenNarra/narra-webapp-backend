@@ -1,0 +1,2 @@
+Contact: projekt@narra.pl
+Encryption: /static/narra.gpg

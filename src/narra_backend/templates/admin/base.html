@@ -1,0 +1,13 @@
+{% extends 'admin/base.html' %}
+
+
+{% load static %}
+
+
+{% block extrahead %}
+{{ block.super }}
+<link rel="icon" href="{% static 'favicon.png' %}" sizes="32x32" />
+<link rel="icon" href="{% static 'favicon.png' %}" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="{% static 'favicon.png' %}" />
+<meta name="msapplication-TileImage" content="{% static 'favicon.png' %}" />
+{% endblock %}

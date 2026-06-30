@@ -1,0 +1,600 @@
+#%RAML 1.0
+---
+title: Narra
+description: |
+  API for Narra project
+documentation:
+  - title: Basic usage
+    content: !include docs/basic-usage.md
+version: v1
+baseUri: https://narra-software.herokuapp.com/api/{version}
+securedBy: [ member_auth_token ]
+mediaType: application/json
+protocols: [ HTTPS ]
+
+types:
+  error-resp:
+    type: !include schemas/error-resp.json
+    example: !include examples/error-resp.json
+  package:
+    type: !include schemas/package.json
+    example: !include examples/package.json
+  package-add-resp:
+    type: !include schemas/package-add-resp.json
+    example: !include examples/package-add-resp.json
+  token-auth-req:
+    type: !include schemas/token-auth-req.json
+    example: !include examples/token-auth-req.json
+  token-auth-resp:
+    type: !include schemas/token-auth-resp.json
+    example: !include examples/token-auth-resp.json
+  packages-list-resp:
+    type: !include schemas/packages-list-resp.json
+    example: !include examples/packages-list-resp.json
+  package-lock-req:
+    type: !include schemas/package-lock-req.json
+    example: !include examples/package-lock-req.json
+  package-lock-resp:
+    type: !include schemas/package-lock-resp.json
+    example: !include examples/package-lock-resp.json
+  package-check-resp:
+    type: !include schemas/package-check-resp.json
+    example: !include examples/package-check-resp.json
+  package-validate-resp:
+    type: !include schemas/package-validate-resp.json
+    example: !include examples/package-validate-resp.json
+  units-teams-list:
+    type: !include schemas/units-teams-list.json
+    example: !include examples/units-teams-list.json
+  units-teams-add-req:
+    type: !include schemas/units-teams-add-req.json
+    example: !include examples/units-teams-add-req.json
+  units-teams-add-resp:
+    type: !include schemas/units-teams-add-resp.json
+    example: !include examples/units-teams-add-resp.json
+  units-teams-update-req:
+    type: !include schemas/units-teams-update-req.json
+    example: !include examples/units-teams-update-req.json
+  units-teams-remove-req:
+    type: !include schemas/units-teams-remove-req.json
+    example: !include examples/units-teams-remove-req.json
+  units-teams-remove-resp:
+    type: !include schemas/units-teams-remove-resp.json
+    example: !include examples/units-teams-remove-resp.json
+  units-team-members-list:
+    type: !include schemas/units-team-members-list.json
+    example: !include examples/units-team-members-list.json
+  units-team-members-add-req:
+    type: !include schemas/units-team-members-add-req.json
+    example: !include examples/units-team-members-add-req.json
+  units-team-members-add-resp:
+    type: !include schemas/units-team-members-add-resp.json
+    example: !include examples/units-team-members-add-resp.json
+  units-team-members-update-req:
+    type: !include schemas/units-team-members-update-req.json
+    example: !include examples/units-team-members-update-req.json
+  units-team-members-remove-req:
+    type: !include schemas/units-team-members-remove-req.json
+    example: !include examples/units-team-members-remove-req.json
+  units-team-members-remove-resp:
+    type: !include schemas/units-team-members-remove-resp.json
+    example: !include examples/units-team-members-remove-resp.json
+  units-passwd-reset-req-req:
+    type: !include schemas/units-passwd-reset-req-req.json
+    example: !include examples/units-passwd-reset-req-req.json
+  units-passwd-reset-req-resp:
+    type: !include schemas/units-passwd-reset-req-resp.json
+    example: !include examples/units-passwd-reset-req-resp.json
+  units-passwd-reset-act-req:
+    type: !include schemas/units-passwd-reset-act-req.json
+    example: !include examples/units-passwd-reset-act-req.json
+  units-passwd-reset-act-resp:
+    type: !include schemas/units-passwd-reset-act-resp.json
+    example: !include examples/units-passwd-reset-act-resp.json
+  releaseuids-add-req:
+    type: !include schemas/releaseuids-add-req.json
+    example: !include examples/releaseuids-add-req.json
+  releaseuids-add-resp:
+    type: !include schemas/releaseuids-add-resp.json
+    example: !include examples/releaseuids-add-resp.json
+  releaseuids-list-resp:
+    type: !include schemas/releaseuids-list-resp.json
+    example: !include examples/releaseuids-list-resp.json
+  releaseuids-update-req:
+    type: !include schemas/releaseuids-update-req.json
+    example: !include examples/releaseuids-update-req.json
+
+traits:
+  member_auth_token_secured: !include traits/member_auth_token_secured.raml
+  user_auth_token_secured: !include traits/user_auth_token_secured.raml
+
+securitySchemes:
+  member_auth_token:
+    description: |
+      Request require header with member's API token
+    type: Pass Through
+    describedBy: !include traits/member_auth_token_secured.raml
+  user_auth_token:
+    description: |
+      Request require header with user's API token
+    type: Pass Through
+    describedBy: !include traits/user_auth_token_secured.raml
+
+/token-auth:
+  securedBy: [ null ]
+  post:
+    description: |
+      Obtain member's authentication token
+    body:
+      application/json:
+        type: token-auth-req
+    responses:
+      200:
+        description: Token available and returned
+        body:
+          application/json:
+            type: token-auth-resp
+
+/password/reset:
+  securedBy: [ null ]
+  post:
+    description: |
+      Request for password reset
+    body:
+      application/json:
+        type: units-passwd-reset-req-req
+    responses:
+      200:
+        description: Operation accepted status
+        body:
+          application/json:
+            type: units-passwd-reset-req-resp
+  patch:
+    description: |
+      New password setup
+    body:
+      application/json:
+        type: units-passwd-reset-act-req
+    responses:
+      200:
+        description: New password set
+        body:
+          application/json:
+            type: units-passwd-reset-act-resp
+      400:
+        description: Bad request
+        body:
+          application/json:
+            type: error-resp
+      403:
+        description: Not authorized
+        body:
+          application/json:
+            type: error-resp
+
+/package:
+  is: [ member_auth_token_secured ]
+  post:
+    description: |
+      Add new package
+    body:
+      application/json:
+        type: package
+    responses:
+      201:
+        description: Package created
+        body:
+          application/json:
+            type: package-add-resp
+      400:
+        description: No package or package broken
+        body:
+          application/json:
+            type: error-resp
+      403:
+        description: Operation not authorized
+        body:
+          application/json:
+            type: error-resp
+  /check:
+    is: [ member_auth_token_secured ]
+    post:
+      description: |
+        Checks package
+      body:
+        application/json:
+          type: package
+      responses:
+        200:
+          description: Package check status
+          body:
+            application/json:
+              type: package-check-resp
+        400:
+          description: No package or package broken
+          body:
+            application/json:
+              type: error-resp
+        403:
+          description: Operation not authorized
+          body:
+            application/json:
+              type: error-resp
+  /validate:
+    is: [ member_auth_token_secured ]
+    post:
+      description: |
+        Validates package
+      body:
+        application/json:
+          type: package
+      responses:
+        200:
+          description: Package validation status
+          body:
+            application/json:
+              type: package-validate-resp
+        400:
+          description: No package or package broken
+          body:
+            application/json:
+              type: error-resp
+        403:
+          description: Operation not authorized
+          body:
+            application/json:
+              type: error-resp
+  /{package_id}:
+    is: [ member_auth_token_secured ]
+    uriParameters:
+      package_id:
+        type: integer
+    get:
+      description: |
+        Fetch package by ID
+      responses:
+        200:
+          description: A package
+          body:
+            application/json:
+              type: package
+        403:
+          description: Operation not authorized
+          body:
+            application/json:
+              type: error-resp
+    patch:
+      description: |
+        Package update
+      body:
+        application/json:
+          type: package
+      responses:
+        202:
+          description: Package update accepted
+          body:
+            application/json:
+              type: package-add-resp
+        400:
+          description: No package or package broken
+          body:
+            application/json:
+              type: error-resp
+        403:
+          description: Operation not authorized
+          body:
+            application/json:
+              type: error-resp
+    put:
+      description: |
+        Package update
+      body:
+        application/json:
+          type: package
+      responses:
+        202:
+          description: Package update accepted
+          body:
+            application/json:
+              type: package-add-resp
+        400:
+          description: No package or package broken
+          body:
+            application/json:
+              type: error-resp
+        403:
+          description: Operation not authorized
+          body:
+            application/json:
+              type: error-resp
+    /download:
+      is: [ member_auth_token_secured ]
+      get:
+        description: |
+          Download package by ID
+        responses:
+          200:
+            description: A package JSON (download)
+            body:
+              application/json:
+                type: package
+          403:
+            description: Operation not authorized
+            body:
+              application/json:
+                type: error-resp
+    /lock:
+      is: [ member_auth_token_secured ]
+      get:
+        description: |
+          Get package locking status
+        responses:
+          200:
+            description: A package locking status
+            body:
+              application/json:
+                type: package-lock-resp
+          403:
+            description: Operation not permitted
+            body:
+              application/json:
+                type: error-resp
+      put:
+        description: |
+          Package lock tryout
+        body:
+          application/json:
+            type: package-lock-req
+        responses:
+          202:
+            description: Package locking accepted
+            body:
+              application/json:
+                type: package-lock-resp
+          403:
+            description: Operation not permitted
+            body:
+              application/json:
+                type: error-resp
+      delete:
+        description: |
+          Package unlock tryout
+        body:
+          application/json:
+            type: package-lock-req
+        responses:
+          202:
+            description: Package unlocking accepted
+            body:
+              application/json:
+                type: package-lock-resp
+          403:
+            description: Operation not permitted
+            body:
+              application/json:
+                type: error-resp
+
+/packages:
+  is: [ member_auth_token_secured ]
+  get:
+    description: |
+      List available packages
+    responses:
+      200:
+        description: Sorted list of available packages
+        body:
+          application/json:
+            type: packages-list-resp
+      403:
+        description: Operation not authorized
+        body:
+          application/json:
+            type: error-resp
+
+/org/{org_id}:
+  uriParameters:
+    org_id:
+      type: integer
+  /signin:
+    securedBy: [ null ]
+    post:
+      description: |
+        Obtain authentication token
+      body:
+        application/json:
+          type: token-auth-req
+      responses:
+        200:
+          description: Token available and returned
+          body:
+            application/json:
+              type: token-auth-resp
+  /teams:
+    is: [ member_auth_token_secured ]
+    get:
+      description: |
+        Fetch organization teams
+      responses:
+        200:
+          description: A teams list
+          body:
+            application/json:
+              type: units-teams-list
+        403:
+          description: Operation not authorized
+          body:
+            application/json:
+              type: error-resp
+    post:
+      description: |
+        Add organization team
+      body:
+        application/json:
+          type: units-teams-add-req
+      responses:
+        200:
+          description: An added team entry
+          body:
+            application/json:
+              type: units-teams-add-resp
+        403:
+          description: Operation not authorized
+          body:
+            application/json:
+              type: error-resp
+    patch:
+      description: |
+        Updates organization team
+      body:
+        application/json:
+          type: units-teams-update-req
+      responses:
+        200:
+          description: An updated team entry
+          body:
+            application/json:
+              type: units-teams-add-resp
+        403:
+          description: Operation not authorized
+          body:
+            application/json:
+              type: error-resp
+    delete:
+      description: |
+        Remove organization team
+      body:
+        application/json:
+          type: units-teams-remove-req
+      responses:
+        200:
+          description: A removed team list entry
+          body:
+            application/json:
+              type: units-teams-remove-resp
+        403:
+          description: Operation not authorized
+          body:
+            application/json:
+              type: error-resp
+  /team/{team_id}/members:
+    is: [ member_auth_token_secured ]
+    uriParameters:
+      team_id:
+        type: integer
+    get:
+      description: |
+        Fetch team members
+      responses:
+        200:
+          description: A team members list
+          body:
+            application/json:
+              type: units-team-members-list
+        403:
+          description: Operation not authorized
+          body:
+            application/json:
+              type: error-resp
+    post:
+      description: |
+        Add team member
+      body:
+        application/json:
+          type: units-team-members-add-req
+      responses:
+        200:
+          description: An added team member entry
+          body:
+            application/json:
+              type: units-team-members-add-resp
+        403:
+          description: Operation not authorized
+          body:
+            application/json:
+              type: error-resp
+    patch:
+      description: |
+        Update team member
+      body:
+        application/json:
+          type: units-team-members-update-req
+      responses:
+        200:
+          description: An added team member entry
+          body:
+            application/json:
+              type: units-team-members-add-resp
+        403:
+          description: Operation not authorized
+          body:
+            application/json:
+              type: error-resp
+    delete:
+      description: |
+        Remove team member
+      body:
+        application/json:
+          type: units-team-members-remove-req
+      responses:
+        200:
+          description: A removed team member list entry
+          body:
+            application/json:
+              type: units-team-members-remove-resp
+        403:
+          description: Operation not authorized
+          body:
+            application/json:
+              type: error-resp
+
+/releaseuids:
+  is: [ user_auth_token_secured ]
+  securedBy: [ user_auth_token ]
+  get:
+    description: |
+      Fetch release UIDs
+    responses:
+      200:
+        description: A release UIDs list
+        body:
+          application/json:
+            type: releaseuids-list-resp
+      403:
+        description: Operation not authorized
+        body:
+          application/json:
+            type: error-resp
+  post:
+    description: |
+      Add release UID
+    body:
+      application/json:
+        type: releaseuids-add-req
+    responses:
+      200:
+        description: An added release UID entry
+        body:
+          application/json:
+            type: releaseuids-add-resp
+      403:
+        description: Operation not authorized
+        body:
+          application/json:
+            type: error-resp
+  patch:
+    description: |
+      Update release UID
+    body:
+      application/json:
+        type: releaseuids-update-req
+    responses:
+      200:
+        description: An updated release UID entry
+        body:
+          application/json:
+            type: releaseuids-add-resp
+      403:
+        description: Operation not authorized
+        body:
+          application/json:
+            type: error-resp

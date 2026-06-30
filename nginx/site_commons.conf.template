@@ -1,0 +1,29 @@
+	server_name  _;
+
+	charset  utf-8;
+
+	root  /var/empty;
+	index  index.html  index.htm;
+
+	expires  modified  30m;
+
+	location / {
+		try_files  $uri  $uri/  @backend;
+	}
+
+	location @backend {
+		proxy_read_timeout  300;
+		proxy_connect_timeout  300;
+		proxy_redirect  off;
+
+		proxy_set_header  X-Forwarded-Proto  $scheme;
+		proxy_set_header  Host  $host;
+		proxy_set_header  X-Real-IP  $remote_addr;
+
+		add_header  Access-Control-Allow-Origin  "*"  always;
+		add_header  Access-Control-Allow-Headers  "origin, x-requested-with, content-type, authorization"  always;
+		add_header  Access-Control-Allow-Methods  "PUT, GET, POST, PATCH, DELETE, OPTIONS"  always;
+		add_header  Access-Control-Expose-Headers  "content-length"  always;
+
+		proxy_pass  http://narra-backend:${PORT};
+	}

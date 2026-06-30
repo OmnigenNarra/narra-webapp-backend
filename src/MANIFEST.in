@@ -1,0 +1,10 @@
+recursive-include narra_backend *.html
+recursive-include narra_backend/static *
+graft tests
+global-exclude *.py[cod]
+global-exclude __pycache__
+prune .gcloudignore
+prune Procfile
+prune pytest.ini
+prune *.txt
+prune *.yaml

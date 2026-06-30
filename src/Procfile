@@ -1,0 +1,2 @@
+release: /app/heroku_release.sh
+web: /app/heroku_web.sh
